@@ -526,12 +526,12 @@ details,
   .hero__grid { gap: 24px; }
   .hero__content { width: 100%; max-width: 100%; min-width: 0; text-align: left; overflow-wrap: anywhere; }
   .hero__content > * { max-width: 100%; }
-  h1 { font-size: clamp(1.8rem, 9.6vw, 2.75rem); letter-spacing: -.035em; line-height: 1.05; max-width: 100%; overflow-wrap: normal; word-break: normal; hyphens: none; }
+  h1 { font-size: clamp(2.05rem, 8.2vw, 2.65rem); letter-spacing: -.025em; line-height: 1.12; max-width: 100%; overflow-wrap: normal; word-break: normal; hyphens: none; }
   h2 { font-size: clamp(1.58rem, 8vw, 2.15rem); letter-spacing: -.035em; }
   h3 { font-size: 1.08rem; }
   p { font-size: .94rem; line-height: 1.62; }
-  .hero__lead { font-size: .8rem; line-height: 1.55; max-width: 31rem; }
-  .eyebrow { font-size: .6rem; letter-spacing: .11em; gap: 7px; }
+  .hero__lead { font-size: 1rem; line-height: 1.65; max-width: 33rem; }
+  .eyebrow { font-size: .72rem; letter-spacing: .13em; gap: 10px; }
   .eyebrow::before { width: 24px; }
   .hero__actions { margin: 22px 0; gap: 10px; max-width: 100%; }
   .btn { min-height: 48px; padding: 14px 18px; font-size: .84rem; max-width: 100%; white-space: normal; text-align: center; }
@@ -703,8 +703,8 @@ details,
     margin-left: auto;
     margin-right: auto;
   }
-  h1 { font-size: 1.55rem; line-height: 1.08; }
-  .hero__lead { font-size: .76rem; }
+  h1 { font-size: 1.72rem; line-height: 1.14; letter-spacing: -.018em; }
+  .hero__lead { font-size: .88rem; }
   .btn { min-height: 42px; padding: 11px 12px; font-size: .68rem; }
   .hero__checks li { font-size: .66rem; }
 }
