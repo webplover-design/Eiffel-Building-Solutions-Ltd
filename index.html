@@ -325,13 +325,13 @@
       </div>
       <form class="quote-card quote-card--modal" data-popup-form aria-label="Popup free insulation quote form">
         <div class="form-grid">
-          <label>Name<input required type="text" name="name" autocomplete="name"></label>
-          <label>Phone<input required type="tel" name="phone" autocomplete="tel"></label>
-          <label>Email<input type="email" name="email" autocomplete="email"></label>
-          <label>Postcode<input required type="text" name="postcode" autocomplete="postal-code"></label>
-          <label class="form-grid__wide">Service required
+          <label><span class="sr-only">Name</span><input required type="text" name="name" autocomplete="name" placeholder="Name"></label>
+          <label><span class="sr-only">Phone</span><input required type="tel" name="phone" autocomplete="tel" placeholder="Phone"></label>
+          <label><span class="sr-only">Email</span><input type="email" name="email" autocomplete="email" placeholder="Email"></label>
+          <label><span class="sr-only">Postcode</span><input required type="text" name="postcode" autocomplete="postal-code" placeholder="Postcode"></label>
+          <label class="form-grid__wide"><span class="sr-only">Service required</span>
             <select name="service" required>
-              <option value="">Select a service</option>
+              <option value="">Service required</option>
               <option>Loft Insulation</option>
               <option>Loft Boarding and Insulation</option>
               <option>Room-in-Roof Insulation</option>
@@ -342,7 +342,7 @@
               <option>Not Sure Yet</option>
             </select>
           </label>
-          <label class="form-grid__wide">Message<textarea name="message" rows="4"></textarea></label>
+          <label class="form-grid__wide"><span class="sr-only">Message</span><textarea name="message" rows="4" placeholder="Message"></textarea></label>
         </div>
         <button class="btn btn--primary btn--full" type="submit">Request My Free Quote</button>
         <p class="form-note" data-popup-form-note>No spam. Just a direct reply from Eiffel Building Solutions Ltd.</p>
