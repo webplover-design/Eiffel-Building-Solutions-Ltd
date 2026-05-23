@@ -27,20 +27,18 @@ navLinks?.querySelectorAll('a').forEach((link) => {
 
 function sendQuoteRequest(form, noteElement) {
   const data = new FormData(form);
-  const subject = encodeURIComponent('Free insulation quote request');
-  const body = encodeURIComponent(
-    `Name: ${data.get('name') || ''}\n` +
-    `Phone: ${data.get('phone') || ''}\n` +
-    `Email: ${data.get('email') || ''}\n` +
-    `Postcode: ${data.get('postcode') || ''}\n` +
-    `Service: ${data.get('service') || ''}\n\n` +
-    `Message:\n${data.get('message') || ''}`
-  );
+  const params = new URLSearchParams();
+
+  ['name', 'phone', 'email', 'postcode', 'service', 'message'].forEach((key) => {
+    const value = data.get(key);
+    if (value) params.set(key, value);
+  });
 
   if (noteElement) {
-    noteElement.textContent = 'Opening your email app so you can send the quote request.';
+    noteElement.textContent = 'Taking you to the thank-you page.';
   }
-  window.location.href = `mailto:eiffelbuildingsolutions@gmail.com?subject=${subject}&body=${body}`;
+
+  window.location.href = `thank-you.html?${params.toString()}`;
 }
 
 quoteForm?.addEventListener('submit', (event) => {

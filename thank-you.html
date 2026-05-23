@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Eiffel Building Solutions Ltd</title>
+  <meta name="description" content="Thank you for contacting Eiffel Building Solutions Ltd. Call or WhatsApp us to discuss your insulation quote request." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="thank-you-page">
+  <main class="thank-you">
+    <div class="thank-you__card">
+      <p class="eyebrow">Thank you</p>
+      <h1>We’ve Received Your Quote Details</h1>
+      <p>Thank you for contacting Eiffel Building Solutions Ltd. Your insulation enquiry details are ready below. You can call us directly or send the details to us on WhatsApp so we can respond quickly.</p>
+      <div class="thank-you__summary" id="quote-summary" aria-live="polite"></div>
+      <div class="thank-you__actions">
+        <a class="btn btn--secondary" href="tel:+447450921830">Call Now</a>
+        <a class="btn btn--primary" id="whatsapp-link" href="https://wa.me/447450921830" target="_blank" rel="noopener">Send Details on WhatsApp</a>
+      </div>
+      <a class="thank-you__back" href="index.html">Back to homepage</a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const fields = {
+      name: params.get('name') || '',
+      phone: params.get('phone') || '',
+      email: params.get('email') || '',
+      postcode: params.get('postcode') || '',
+      service: params.get('service') || '',
+      message: params.get('message') || ''
+    };
+
+    const summary = document.querySelector('#quote-summary');
+    const rows = [
+      ['Name', fields.name],
+      ['Phone', fields.phone],
+      ['Email', fields.email],
+      ['Postcode', fields.postcode],
+      ['Service', fields.service],
+      ['Message', fields.message]
+    ].filter(([, value]) => value);
+
+    summary.innerHTML = rows.length
+      ? rows.map(([label, value]) => `<p><strong>${label}:</strong> ${value.replace(/[<>&]/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[char]))}</p>`).join('')
+      : '<p>Your quote details are ready to discuss.</p>';
+
+    const whatsappMessage = [
+      'Hello Eiffel Building Solutions Ltd, I would like a free insulation quote.',
+      fields.name ? `Name: ${fields.name}` : '',
+      fields.phone ? `Phone: ${fields.phone}` : '',
+      fields.email ? `Email: ${fields.email}` : '',
+      fields.postcode ? `Postcode: ${fields.postcode}` : '',
+      fields.service ? `Service required: ${fields.service}` : '',
+      fields.message ? `Message: ${fields.message}` : ''
+    ].filter(Boolean).join('\n');
+
+    document.querySelector('#whatsapp-link').href = `https://wa.me/447450921830?text=${encodeURIComponent(whatsappMessage)}`;
+  </script>
+</body>
+</html>
