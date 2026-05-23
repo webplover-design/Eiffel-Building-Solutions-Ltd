@@ -6,6 +6,8 @@ const formNote = document.querySelector('[data-form-note]');
 const quoteModal = document.querySelector('#quote-modal');
 const popupForm = document.querySelector('[data-popup-form]');
 const popupFormNote = document.querySelector('[data-popup-form-note]');
+const bottomForm = document.querySelector('[data-bottom-form]');
+const bottomFormNote = document.querySelector('[data-bottom-form-note]');
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('is-scrolled', window.scrollY > 12);
@@ -49,6 +51,11 @@ quoteForm?.addEventListener('submit', (event) => {
 popupForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   sendQuoteRequest(popupForm, popupFormNote);
+});
+
+bottomForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  sendQuoteRequest(bottomForm, bottomFormNote);
 });
 
 function openQuoteModal(event) {
